@@ -33,3 +33,17 @@ Team Memmbers
 | **Gloria Boatemaa Karikari-Yeboah** | Architect	                | Software Design Engineer     |
 | **Alfred Kofi Gaglo**	              | Software Design Engineer	| Program Management           |
 | **Nanette Mawuena Taylor**	        | Team Leader	              | Interaction Design           |
+
+### Project Status
+Curently, the project allows a typical user to view an HTML page which displays a number of image tiles containing  some random test news items and placeholders.
+
+### Running the project
+The project must be run using a MySQL server
+
+### 
+A guide to the files and structure of the product (for example, links to your architecture worksheet, descriptions on how to clone and build the product, significant dependencies or tools.
+
+
+### Wiki
+Check out our wiki (https://github.com/ashesi-SE/news-on-time/wiki) to find out more about our project
+
