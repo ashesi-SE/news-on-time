@@ -2,7 +2,7 @@ news-on-time - A virtual notice board
 =====================================
 
 
-This project is a web application which plays the role of a notice board. This project started as an idea to solve the defeciencies of the email system of communicating events to the Ashesi University College community. The app provides a central hub where students can post and view information regarding social events and activities happening on campus.
+This project is a web application which plays the role of a notice board. It started as an idea to solve the defeciencies of the email system of communicating events to the Ashesi University College community. The app provides a central hub where members can post and view information regarding social events and activities happening on campus.
 
 Problem and Solution Generation
 -------------------------------
