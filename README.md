@@ -44,7 +44,11 @@ Getting Started
 * XAMPP Apache Web Server
 
 ### Setting Up
-To clone the project, type git clone https://github.com/ashesi-SE/news-on-time
+1. Initialise git in the htdocs directory of XAMPP by typing `git init`
+2. Clone the project by typing `git clone https://github.com/ashesi-SE/news-on-time` in a git initialised directory/repository
+3. Type `git checkout -f stable` to get the stable
+4. Navigate to http://localhost/news-on-time/
+
 
 You can find our architecture worksheet [here](https://github.com/ashesi-SE/news-on-time/wiki/Architecture)
 
