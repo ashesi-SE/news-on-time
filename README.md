@@ -46,7 +46,7 @@ Getting Started
 ### Setting Up
 1. Initialise git in the htdocs directory of XAMPP by typing `git init`
 2. Clone the project by typing `git clone https://github.com/ashesi-SE/news-on-time` in a git initialised directory/repository
-3. Type `git checkout -f stable` to get the stable
+3. Type `git checkout -f first-iteration` to get what we have so far
 4. Navigate to http://localhost/news-on-time/
 
 
