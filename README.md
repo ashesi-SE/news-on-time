@@ -34,16 +34,21 @@ Team Memmbers
 | **Alfred Kofi Gaglo**	              | Software Design Engineer	| Program Management           |
 | **Nanette Mawuena Taylor**	        | Team Leader	              | Interaction Design           |
 
-### Project Status
+Project Status
+--------------
 Curently, the project allows a typical user to view an HTML page which displays a number of image tiles containing  some random test news items and placeholders.
 
-### Running the project
-The project must be run using a MySQL server
+Getting Started
+---------------
+### Dependencies
+* XAMPP Apache Web Server
 
-### 
-A guide to the files and structure of the product (for example, links to your architecture worksheet, descriptions on how to clone and build the product, significant dependencies or tools.
+### Setting Up
+To clone the project, type git clone https://github.com/ashesi-SE/news-on-time
+
+You can find our architecture worksheet [here](https://github.com/ashesi-SE/news-on-time/wiki/Architecture)
 
 
 ### Wiki
-Check out our wiki (https://github.com/ashesi-SE/news-on-time/wiki) to find out more about our project
+Check out our [wiki](https://github.com/ashesi-SE/news-on-time/wiki) to find out more about our project
 
