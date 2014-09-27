@@ -66,22 +66,39 @@
 					<td class="head">Movies showing</td>
 					<td class="head">times</td>
 				</tr>
-				<tr>
-					<td class="sub">Kantata (Season Finale)</td>
-					<td>17:30 GMT</td>
-				</tr>
-				<tr>
-					<td class="sub">X-men: Days of Future Past</td>
-					<td>19:10 GMT</td>
-				</tr>
-				<tr>
-					<td class="sub">Kantata (Season Finale)</td>
-					<td>17:30 GMT</td>
-				</tr>
-				<tr>
-					<td class="sub">Kantata (Season Finale)</td>
-					<td>17:30 GMT</td>
-				</tr>
+
+<?php
+
+	//connect to the database
+	$link = mysql_connect("localhost", "root", "");
+
+	//if the connection if false
+	if (!$link) {
+		echo "failed ot connect to mysql";
+		//display erro message from mysql
+		echo mysql_error();
+		exit();
+	}
+
+	//select the database to work with using the open connection
+	if (!mysql_select_db("dbms_news_on_time", $link)) {
+		echo "failed to connect to database";
+		//display erro message from mysql
+		echo mysql_error();
+		exit();
+	}
+
+	echo "<tr>";
+		echo "<td class="sub">Kantata (Season Finale)</td>";
+		echo "<td>17:30 GMT</td>";
+	echo "</tr>";
+	echo "<tr>";
+		echo "<td class="sub">X-men: Days of Future Past</td>";
+		echo "<td>19:10 GMT</td>";
+	echo "</tr>";
+
+?>
+
 			</table>
 		</div>
 		<script type="text/javascript">
