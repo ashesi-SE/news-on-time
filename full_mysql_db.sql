@@ -1,10 +1,10 @@
--- The PHP database for News-on-Time web application
+--The PHP database for News-on-Time web application
 
 drop schema if exists dbms_news_on_time;
 
 create schema dbms_news_on_time;
 
--- use dbms_news_on_time;
+use dbms_news_on_time;
 
 create table users
 (

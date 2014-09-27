@@ -88,14 +88,22 @@
 		exit();
 	}
 
+	$database = mysql_query("select * from movies_night", $link);
+
+	// $row = mysql_fetch_assoc($database);
+
 	echo "<tr>";
-		echo "<td class="sub">Kantata (Season Finale)</td>";
+		echo "<td class='sub'>On replay: Kantata (Season Finale)</td>";
 		echo "<td>17:30 GMT</td>";
 	echo "</tr>";
-	echo "<tr>";
-		echo "<td class="sub">X-men: Days of Future Past</td>";
-		echo "<td>19:10 GMT</td>";
-	echo "</tr>";
+
+	do {
+		$row = mysql_fetch_assoc($database);
+		echo "<tr>";
+			echo "<td class='sub'>$row[movie_name]</td>";
+			echo "<td>$row[movie_time]</td>";
+		echo "</tr>";
+	} while($row);
 
 ?>
 
