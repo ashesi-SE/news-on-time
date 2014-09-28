@@ -1,4 +1,4 @@
-DROP DATABASE news_on_time;
+-- DROP DATABASE news_on_time;
 CREATE DATABASE IF NOT EXISTS news_on_time;
 USE news_on_time;
 
