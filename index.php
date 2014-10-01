@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<title>News on Time</title>
 		
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="css/style1.css" />
+
 		
 	</head>
 	<body>
@@ -23,9 +22,12 @@
 					<figcaption>
 						<h2>DESTINATION <span>PARTY</span></h2>
 						<p>Join us in the woods to drink!</p>
-						<!-- <a href="#">View more</a> -->
-					</figcaption>			
+					</figcaption>	
+					<section>
+					<p><button id="trigger-overlay" type="button">view</button></p>
+					</section>
 				</figure>
+
 				<figure class="effect-zoe">
 					<img src="img/5.jpeg" alt="img05"/>
 					<figcaption>
@@ -34,6 +36,7 @@
 						<!-- <a href="#">View more</a> -->
 					</figcaption>			
 				</figure>
+
 				<figure class="effect-zoe">
 					<img src="" alt=""/>
 					<figcaption>
@@ -42,14 +45,16 @@
 						<!-- <a href="#">View more</a> -->
 					</figcaption>			
 				</figure>
+
 				<figure class="effect-zoe">
 					<img src="img/3.jpg" alt="img03"/>
 					<figcaption>
 						<h2>SMOOTHS <span>AND SHAKES</span></h2>
 						<p>are you thirsty?</p>
-						<a href="#">View more</a>
+						<!--<a href="#">View more</a>-->
 					</figcaption>			
 				</figure>
+
 				<figure class="effect-zoe">
 					<img src="img/4.jpg" alt="img04"/>
 					<figcaption>
@@ -58,8 +63,29 @@
 						<a href="#">View more</a>
 					</figcaption>			
 				</figure>
+
 			</div>
+			<!-- open/close -->
+		<div class="overlay overlay-hugeinc">
+			<button type="button" class="overlay-close">Close</button>
+			<nav>
+				<ul>
+				<!--
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+				-->
+				</ul>
+			</nav>
+		</div>
 		</div ><!-- /container -->
+		
+		<script src="js/modernizr.custom.js"></script>
+		<script src="js/classie.js"></script>
+		<script src="js/demo1.js"></script>
+
 		<div id="divMovieList" class="divMovieList">
 			<table class="tableList">
 				<tr>
