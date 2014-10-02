@@ -16,9 +16,12 @@
 		//the login form has been submitted
 		$username=$_REQUEST['username'];
 		$password=$_REQUEST['password'];
+		
+
 		//call login to check username and password
 		if(login($username,$password)){
-			session_start();	//initiate session for the current login
+			session_start();
+				//initiate session for the current login
 			loadUserProfile($username);	//load user information into the session
 			header("location: create_account.php");	//redirect to home page
 			echo "<a href='create_account.php'>click here</a>";	//if redirect fails, provide a link
@@ -26,6 +29,7 @@
 		}else{
 			//if login returns false, then something is worng
 			$msg="username or password is wrong";
+
 		}
 	}
 	
@@ -70,6 +74,7 @@
 </html>
 
 <?php
+include("news_on_time.php");
 	function login($username, $password){
 		//connect to db
 		//select db
@@ -79,36 +84,43 @@
 		//	return true
 		//else 
 		//	return false
-	$database="create_account_db";	//this database has to exist. 
-	$user="root";		//the main admin user of mysql
-	$passwor="";			//use root password of mysql
-	$server="localhost";	//name of the server
+	 $database="news_on_time";	//this database has to exist. 
+	 $user="root";		//the main admin user of mysql
+	 $passwor="";			//use root password of mysql
+	 $server="localhost";	//name of the server
 	
-	$link=mysql_connect($server,$user,$passwor);
-	//if result is false, the connection did not open
-	if(!$link){	
-		echo "Failed to connect to mysql.";
-		//display error message from mysql
-		echo mysql_error();	
-		exit();		//end script
-		echo "failed";
-	}
-	//select the database to work with using the open connection 
-	if(!mysql_select_db($database,$link)){
-		echo "Failed to select database.";
-		//display error message from mysql
-		echo mysql_error();	
-		exit();	
-		return false;
-	}
-	$dataset = mysql_query("select * from user_account where username='$username' and password = '$password'", $link);
-	$result = mysql_fetch_assoc($dataset);
-	if($result)
-	return true;
-	else
-	return false;
+	 $link=mysql_connect($server,$user,$passwor);
+	// //if result is false, the connection did not open
+	 if(!$link){	
+	 	echo "Failed to connect to mysql.";
+	 	//display error message from mysql
+	 	echo mysql_error();	
+	 	exit();		//end script
+	 	echo "failed";
+	 }
+	 //select the database to work with using the open connection 
+	 if(!mysql_select_db($database,$link)){
+	 	echo "Failed to select database.";
+	 	//display error message from mysql
+	 	echo mysql_error();	
+	 	exit();	
+	 	return false;
+	 }
+	 $dataset = mysql_query("select * from users where username='$username' and passwd = MD5('$password')", $link);
+	 $result = mysql_fetch_assoc($dataset);
+	 if($result)
+	 return true;
+	 else
+	 return false;
 	
 	}
+
+	// include("news_on_time.php");
+	// $obj = new posts();
+	// $obj->connect();
+	// $obj->user_Authentication($username,$password);
+	
+	// }
 	
 	function loadUserProfile($username){
 		//load username and other informaiton into the session 
