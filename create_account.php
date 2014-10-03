@@ -38,31 +38,31 @@
     </script>
 
 <?php
-include_once("ASH_ACCReg.php");
-				$obj = new ASH_ACCReg();
-				$obj->connect();
-				
-				$firstname="";
-				if(isset($_REQUEST['firstname'])){
-					$firstname=$_REQUEST['firstname'];
-				}
-				$lastname="";
-				if(isset($_REQUEST['lastname'])){
-					$lastname=$_REQUEST['lastname'];
-				}
-                $username="";
-                if(isset($_REQUEST['username'])){
-					$username=$_REQUEST['username'];
-				}
-                $password="password";
-                if(isset($_REQUEST['password'])){
-					$password=$_REQUEST['password'];
-				}
+    include_once("ASH_ACCReg.php");
+	$obj = new ASH_ACCReg();
+	$obj->connect();
+	
+	$firstname="";
+	if(isset($_REQUEST['firstname'])){
+		$firstname=$_REQUEST['firstname'];
+	}
+	$lastname="";
+	if(isset($_REQUEST['lastname'])){
+		$lastname=$_REQUEST['lastname'];
+	}
+    $username="";
+    if(isset($_REQUEST['username'])){
+		$username=$_REQUEST['username'];
+	}
+    $password="password";
+    if(isset($_REQUEST['password'])){
+		$password=$_REQUEST['password'];
+	}
 
 		
-		if(!$obj->insert_account($firstname,$lastname,$username,$password)){
-			exit();
-		}
+	if(!$obj->insert_account($firstname,$lastname,$username,$password)){
+		exit();
+	}
 		
 ?>
                 

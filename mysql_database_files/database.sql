@@ -21,6 +21,7 @@ INSERT INTO users(firstname,lastname,gender,username,passwd) VALUES
 
 CREATE TABLE IF NOT EXISTS posts(
 	pstid int not null auto_increment,
+	title varchar(200),
 	image_path varchar(255),
 	description varchar(500),
 	category enum ("movies","parties","foodie","sports","club events","other events"),
@@ -28,15 +29,15 @@ CREATE TABLE IF NOT EXISTS posts(
 	end_date date,
 	PRIMARY KEY(pstid)
 );
-INSERT INTO posts(description, category, start_date, end_date) VALUES
-("Some description telling you what this post is about","movies","2014-09-30","2014-10-10"),
-("Some description telling you what this post is about","parties","2014-09-30","2014-09-30"),
-("Some description telling you what this post is about","foodie","2014-09-30","2014-10-10"),
-("Some description telling you what this post is about","sports","2014-09-24","2014-09-27"),
-("Some description telling you what this post is about","club events","2014-09-20","2014-09-26"),
-("Some description telling you what this post is about","other events","2014-09-30","2014-10-10");
+INSERT INTO posts(title,image_path, description, category, start_date, end_date) VALUES
+("Movie Night","upload/Movie-Night1.jpg","Some description telling you what this post is about","movies","2014-09-30","2014-10-10"),
+("Blackout","upload/5.jpeg","Some description telling you what this post is about","parties","2014-09-30","2014-10-10"),
+("Smooths and Shakes","upload/gangnamtocat.png","Some description telling you what this post is about","foodie","2014-09-30","2014-10-10"),
+("Small Poles","upload/gangnamtocat.png","Some description telling you what this post is about","sports","2014-09-30","2014-10-10"),
+("1000 words","upload/5.jpeg","Some description telling you what this post is about","club events","2014-09-30","2014-10-10"),
+("Hard Talk","upload/baracktocat.jpg","Some description telling you what this post is about","other events","2014-09-30","2014-10-10");
 -- select * from posts;
--- SELECT * FROM posts WHERE category = 'movies' AND start_date <= CURRENT_DATE() AND end_date >= CURRENT_DATE();
+-- SELECT COUNT(*) FROM posts WHERE category = 'movies' AND start_date <= CURRENT_DATE() AND end_date >= CURRENT_DATE();
 -- SELECT CURRENT_DATE();
 
 CREATE TABLE IF NOT EXISTS lost_and_found(
