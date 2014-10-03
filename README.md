@@ -33,3 +33,27 @@ Team Memmbers
 | **Gloria Boatemaa Karikari-Yeboah** | Architect	                | Software Design Engineer     |
 | **Alfred Kofi Gaglo**	              | Software Design Engineer	| Program Management           |
 | **Nanette Mawuena Taylor**	        | Team Leader	              | Interaction Design           |
+
+Project Status
+--------------
+Curently, the project allows a typical user to view an HTML page which displays a number of image tiles containing  some random test news items and placeholders.
+
+Getting Started
+---------------
+### Dependencies
+* XAMPP Apache Web Server
+
+### Setting Up
+1. Initialise git in the htdocs directory of XAMPP by typing `git init`
+2. Clone the project by typing `git clone https://github.com/ashesi-SE/news-on-time` in a git initialised directory/repository
+3. Type `git checkout -f second-iteration` to get what we have so far
+4. Run the databse.sql file found in the mysql_database_files. Make sure you don't have a database called news_on_time otherwise it will be deleted.
+4. Navigate to http://localhost/news-on-time/
+
+
+You can find our architecture worksheet [here](https://github.com/ashesi-SE/news-on-time/wiki/Architecture)
+
+
+### Wiki
+Check out our [wiki](https://github.com/ashesi-SE/news-on-time/wiki) to find out more about our project
+
