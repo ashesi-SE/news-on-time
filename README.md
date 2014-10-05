@@ -46,8 +46,12 @@ Getting Started
 ### Setting Up
 1. Initialise git in the htdocs directory of XAMPP by typing `git init`
 2. Clone the project by typing `git clone https://github.com/ashesi-SE/news-on-time` in a git initialised directory/repository
+<<<<<<< HEAD
 3. Type `git checkout -f second-iteration` to get what we have so far
 4. Run the databse.sql file found in the mysql_database_files. Make sure you don't have a database called news_on_time otherwise it will be deleted.
+=======
+3. Type `git checkout -f first-iteration` to get what we have so far
+>>>>>>> master
 4. Navigate to http://localhost/news-on-time/
 
 
