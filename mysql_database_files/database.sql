@@ -23,21 +23,25 @@ CREATE TABLE IF NOT EXISTS posts(
 	pstid int not null auto_increment,
 	title varchar(200),
 	image_path varchar(255),
+	venue varchar(100),
+	day date,
+	time time,
 	description varchar(500),
 	category enum ("movies","parties","foodie","sports","club events","other events"),
 	start_date date,
 	end_date date,
 	PRIMARY KEY(pstid)
 );
-INSERT INTO posts(title,image_path, description, category, start_date, end_date) VALUES
-("Movie Night","upload/Movie-Night1.jpg","Some description telling you what this post is about","movies","2014-09-30","2014-10-10"),
-("Blackout","upload/5.jpeg","Some description telling you what this post is about","parties","2014-09-30","2014-10-10"),
-("Smooths and Shakes","upload/gangnamtocat.png","Some description telling you what this post is about","foodie","2014-09-30","2014-10-10"),
-("Small Poles","upload/gangnamtocat.png","Some description telling you what this post is about","sports","2014-09-30","2014-10-10"),
-("1000 words","upload/5.jpeg","Some description telling you what this post is about","club events","2014-09-30","2014-10-10"),
-("Hard Talk","upload/baracktocat.jpg","Some description telling you what this post is about","other events","2014-09-30","2014-10-10");
+INSERT INTO posts(title,image_path, venue, day, time, description, category, start_date, end_date) VALUES
+("Movie Night","upload/Movie-Night1.jpg","LH115","2014-10-08","18:00","Some description telling you what this post is about","movies","2014-09-30","2014-10-25"),
+("Blackout","upload/5.jpeg","LH115","2014-10-08","18:00","Some description telling you what this post is about","parties","2014-09-30","2014-10-25"),
+("Smooths and Shakes","upload/gangnamtocat.png","LH115","2014-10-08","18:00","Some description telling you what this post is about","foodie","2014-09-30","2014-10-25"),
+("Small Poles","upload/gangnamtocat.png","LH115","2014-10-09","18:00","Some description telling you what this post is about","sports","2014-09-30","2014-10-25"),
+("1000 words","upload/5.jpeg","LH115","2014-10-09","18:00","Some description telling you what this post is about","club events","2014-09-30","2014-10-25"),
+("Hard Talk","upload/baracktocat.jpg","LH115","2014-10-09","18:00","Some description telling you what this post is about","other events","2014-09-30","2014-10-25");
 -- select * from posts;
 -- SELECT COUNT(*) FROM posts WHERE category = 'movies' AND start_date <= CURRENT_DATE() AND end_date >= CURRENT_DATE();
+-- SELECT * FROM posts WHERE day = CURRENT_DATE();
 -- SELECT CURRENT_DATE();
 
 CREATE TABLE IF NOT EXISTS lost_and_found(
