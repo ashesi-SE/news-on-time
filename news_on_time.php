@@ -5,6 +5,10 @@
 		function posts(){
 			adb::adb();
 		}
+		function get_todays_events(){
+			$query = "SELECT * FROM posts WHERE day = CURRENT_DATE()";
+			return $this->query($query);
+		}
 		function get_all_movies(){
 			$query = "SELECT * FROM posts WHERE category = 'movies' AND start_date <= CURRENT_DATE() AND end_date >= CURRENT_DATE()";
 			return $this->query($query);
@@ -71,8 +75,8 @@
 			}
 			return $this->fetch();
 		}
-		function add_post($title,$image_path,$description,$category,$start_date,$end_date){
-			$query = "INSERT INTO posts SET title='$title', image_path='$image_path', description='$description', category='$category', start_date='$start_date', end_date='$end_date'";
+		function add_post($title,$image_path,$venue,$day,$time,$description,$category,$start_date,$end_date){
+			$query = "INSERT INTO posts SET title='$title', image_path='$image_path', venue='$venue', day='$day', time='$time', description='$description', category='$category', start_date='$start_date', end_date='$end_date'";
 			return $this->query($query);
 		}
         function user_Authentication($username,$password){
