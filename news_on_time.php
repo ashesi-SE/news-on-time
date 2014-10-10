@@ -2,7 +2,7 @@
 	include_once("adb.php");
 	
 	class news extends adb{
-		function posts(){
+		function news(){
 			adb::adb();
 		}
 		function get_todays_events(){

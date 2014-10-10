@@ -1,8 +1,11 @@
 <html>
+    <head>
+        <title>Administration</title>
+    </head>
 	<body>
         <link rel="stylesheet" type="text/css" href="create_account.css">
         <link rel="stylesheet" type="text/css" href="index.css"> 
-        <div> <!-- class="linkUp" -->
+        <div>
             <a href="/news-on-time/index.php">Go to Notice board</a>
         </div>
         <div class="container">
@@ -13,57 +16,56 @@
 
                 <form action="create_account.php" method="post" class="form-horizontal tpad" role="form">
                     <div class="form-group">
-                        First Name<br>
+                        First Name
             			<input type="text" name="firstname"><br>
                         
-                        Last Name<br>
+                        Last Name
                         <input type="text" name="lastname"><br>
+
+                        Gender
+                        <input type ="text" name="gender"><br>
                         
-                        User Name<br>
+                        User Name
                         <input type="text" name="username"><br>
-                        
-                        Password<br>
+
+                        Password
                         <input type="password" name="password"><br>
                         
-                        <input type="submit" name="submit" value="Submit" onclick="popup()">
+                        <input type="submit" name="submit" value="Submit"> <!-- onclick="popup()" -->
                     </div>
         		</form>
             </div>
         </div>
-    </body>
     <script>
         function popup(){
             alert("Congratulations!You've successfully created an account");
         }
     </script>
-
 <?php
-    include_once("ASH_ACCReg.php");
-	$obj = new ASH_ACCReg();
-	$obj->connect();
-	
-	$firstname="";
-	if(isset($_REQUEST['firstname'])){
-		$firstname=$_REQUEST['firstname'];
-	}
-	$lastname="";
-	if(isset($_REQUEST['lastname'])){
-		$lastname=$_REQUEST['lastname'];
-	}
-    $username="";
-    if(isset($_REQUEST['username'])){
-		$username=$_REQUEST['username'];
-	}
-    $password="password";
-    if(isset($_REQUEST['password'])){
-		$password=$_REQUEST['password'];
-	}
+    include_once("admin_functions.php");
+    $obj = new admin();
+    
+    $obj->connect();
 
-		
-	if(!$obj->insert_account($firstname,$lastname,$username,$password)){
-		exit();
-	}
-		
+    $firstname = "";
+    $lastname = "";
+    $password = "";
+    $gender = "";
+    $username = "";
+
+
+    if(isset($_REQUEST["firstname"]) && isset($_REQUEST["password"])){
+
+        $firstname = $_REQUEST["firstname"];
+        $lastname = $_REQUEST["lastname"];
+        $password = $_REQUEST["password"];
+        $gender = $_REQUEST["gender"];
+        $username = $_REQUEST["username"];
+    }
+
+    if(!$obj->insert_account($firstname, $lastname, $gender, $username, $password)){
+        echo "didn't insert into database";
+    }
 ?>
-                
+    </body>
 </html>
