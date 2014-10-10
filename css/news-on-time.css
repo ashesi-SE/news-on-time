@@ -1,8 +1,28 @@
+body {
+	/*background-color: MintCream;*/
+	background-image: url('../images/background.jpg');
+}
 .category img{
 	width:252px;
 	height:189px;
 }
-.carousel img{
+.carouselContainer{
+	padding-bottom: 5%;
+}
+.carouselContainer img{
 	width:700px;
 	height:400px;
+}
+.title{
+	color: white;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	text-align:center;
+	font-size: 400%;
+	padding-bottom: 3%;
+}
+.thumbnailHeader{
+	text-align:center;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-style:bold;
+	font-size:200%;
 }

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>News on time</title>
-    <link rel="icon" type="image/jpg" href="favicon.jpeg">
+    <link rel="icon" type="image/jpg" href="favicon.png">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -22,6 +22,12 @@
     <link rel="stylesheet" type="text/css" href="css/news-on-time.css">
   </head>
   <body>
+
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="owl/owl-carousel/owl.carousel.js"></script>
+
+    <!-- Get the number of posts in each category -->
     <?php
       include("news_on_time.php");
       $obj = new news();
@@ -34,40 +40,30 @@
       $numParties = $obj->get_num_parties();
       $numFoodie = $obj->get_num_foodie();
       $numSports = $obj->get_num_sports();
+      $numClubEvents = $obj->get_num_club_events();
+      $numOtherEvents = $obj->get_num_other_events();
     ?>
 
-    <script src="js/jquery-1.11.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="owl/owl-carousel/owl.carousel.js"></script>
-
+    
     <div class="container">
-      <div class="">
-        <div class="container">
-          <center><h1>News On Time</h1></center>
-        </div>
-      </div>
+      <!-- Title -->
+      <div class="title">News On Time</div>
 
       <!-- Carousel -->
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-          <div id="owl-example" class="owl-carousel carousel">
-            <?php
-              $row = $obj->get_todays_events();
-              $row = $obj->fetch();
-              while($row){
-                echo ("<div><img src='".$row["image_path"]."' alt='".$row["category"]."'></div>");
+          <div class="carouselContainer">
+            <div id="owl-example" class="owl-carousel">
+              <?php
+                $row = $obj->get_todays_events();
                 $row = $obj->fetch();
-              }
-            ?>
-            <!-- <div><img src="images/parties.jpg" alt="Parties"></div>
-            <div><img src="images/movies.jpg" alt="Movies"></div>
-            <div><img src="images/foodie.jpg" alt="Foodie"></div>
-            <div><img src="images/sports.jpg" alt="Sports"></div>
-            <div><img src="images/parties.jpg" alt="Parties"></div>
-            <div><img src="images/movies.jpg" alt="Movies"></div>
-            <div><img src="images/foodie.jpg" alt="Foodie"></div>
-            <div><img src="images/sports.jpg" alt="Sports"></div> -->
+                while($row){
+                  echo ("<div><img src='".$row["image_path"]."' alt='".$row["category"]."'></div>");
+                  $row = $obj->fetch();
+                }
+              ?>
+            </div>
           </div>
         </div>
         <div class="col-md-2"></div>
@@ -78,11 +74,12 @@
         <!-- Movies Category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <img src="images/movies.jpg" alt="Movie Night">
+            <div class="thumbnailHeader">Movie Night</div>
+            <img src="images/movies.jpg" alt="Movie Night" data-toggle="modal" data-target="#moviesModal">
             <div class="caption">
               <div class="row">
                 <div class="col-md-9">
-                  <button class="btn btn-primary" data-toggle="modal" data-target="#moviesModal">Movie Night</button>   <span class="badge"><?php echo ($numMovies["COUNT(*)"]) ?></span>
+                  <span class="badge"><?php echo ($numMovies["COUNT(*)"]) ?></span>
                 </div>
                 <div class="col-md-3">
                   <button type="submit" class="btn btn-default btn-sm" onclick="addCategory('movies')" data-toggle="modal" data-target="#addModal">
@@ -96,11 +93,12 @@
         <!-- Parties Category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <img src="images/parties.jpg" alt="Parties">
+            <div class="thumbnailHeader">Parties</div>
+            <img src="images/parties.jpg" alt="Parties" data-toggle="modal" data-target="#partiesModal">
             <div class="caption">
               <div class="row">
                 <div class="col-md-9">
-                  <button class="btn btn-primary" data-toggle="modal" data-target="#partiesModal">Parties</button>   <span class="badge"><?php echo ($numParties["COUNT(*)"]) ?></span>
+                  <span class="badge"><?php echo ($numParties["COUNT(*)"]) ?></span>
                 </div>
                 <div class="col-md-3">
                   <button type="submit" class="btn btn-default btn-sm" onclick="addCategory('parties')" data-toggle="modal" data-target="#addModal">
@@ -114,11 +112,12 @@
         <!-- Foodie Category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <img src="images/foodie.jpg" alt="Foodie Events">
+            <div class="thumbnailHeader">Foodie Events</div>
+            <img src="images/foodie.jpg" alt="Foodie Events" data-toggle="modal" data-target="#foodieModal">
             <div class="caption">
               <div class="row">
                 <div class="col-md-9">
-                  <button class="btn btn-primary" data-toggle="modal" data-target="#foodieModal">Foodie Events</button>   <span class="badge"><?php echo ($numFoodie["COUNT(*)"]) ?></span>
+                  <span class="badge"><?php echo ($numFoodie["COUNT(*)"]) ?></span>
                 </div>
                 <div class="col-md-3">
                   <button type="submit" class="btn btn-default btn-sm" onclick="addCategory('foodie')" data-toggle="modal" data-target="#addModal">
@@ -132,11 +131,12 @@
         <!-- Sports category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <img src="images/sports1.jpg" alt="Sports Events">
+            <div class="thumbnailHeader">Sports Events</div>
+            <img src="images/sports1.jpg" alt="Sports Events" data-toggle="modal" data-target="#sportsModal">
             <div class="caption">
               <div class="row">
                 <div class="col-md-9">
-                  <button class="btn btn-primary" data-toggle="modal" data-target="#sportsModal">Sports Events</button>   <span class="badge"><?php echo ($numSports["COUNT(*)"]) ?></span>
+                  <span class="badge"><?php echo ($numSports["COUNT(*)"]) ?></span>
                 </div>
                 <div class="col-md-3">
                   <button type="submit" class="btn btn-default btn-sm" onclick="addCategory('sports')" data-toggle="modal" data-target="#addModal">
@@ -146,6 +146,50 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Club events category -->
+        <div class="col-md-3">
+          <div class="category thumbnail">
+            <div class="thumbnailHeader">Club Events</div>
+            <img src="images/club_events.jpg" alt="Club events" data-toggle="modal" data-target="#clubEventsModal">
+            <div class="caption">
+              <div class="row">
+                <div class="col-md-9">
+                  <span class="badge"><?php echo ($numClubEvents["COUNT(*)"]) ?></span>
+                </div>
+                <div class="col-md-3">
+                  <button type="submit" class="btn btn-default btn-sm" onclick="addCategory('club events')" data-toggle="modal" data-target="#addModal">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Other Events -->
+        <div class="col-md-3">
+          <div class="category thumbnail">
+            <div class="thumbnailHeader">Other Events</div>
+            <img src="images/other_events.jpg" alt="Club events" data-toggle="modal" data-target="#otherEventsModal">
+            <div class="caption">
+              <div class="row">
+                <div class="col-md-9">
+                  <span class="badge"><?php echo ($numOtherEvents["COUNT(*)"]) ?></span>
+                </div>
+                <div class="col-md-3">
+                  <button type="submit" class="btn btn-default btn-sm" onclick="addCategory('other events')" data-toggle="modal" data-target="#addModal">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Empty -->
+        <div class="col-md-3">
+        </div>
+        <!-- Empty -->
+        <div class="col-md-3">
         </div>
       </div>
     </div>
@@ -279,6 +323,70 @@
       </div>
     </div>
 
+    <!-- Club Events Modal -->
+    <div class="modal fade" id="clubEventsModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">Club Events</h4>
+          </div>
+          <div class="modal-body">
+            <?php
+              $row = $obj->get_all_club_events();
+              $row = $obj->fetch();
+              while($row){
+                echo ("<div class='row'><div class='col-md-6'>");
+                echo ("<h2>".$row["title"]."</h2>");
+                echo ("<img src='".$row["image_path"]."' width=300px height=300px>");
+                echo ("</div><div class='col-md-6>'");
+                echo ("<span class='text-right'><h3>");
+                echo ("</br></br><strong>Date: </strong>".$row["day"]."</br>");
+                echo ("<strong>Time: </strong>".$row["time"]."</br>");
+                echo ("<strong>Venue: </strong>".$row["venue"]."</br>");
+                echo ("</h3></span></br>");
+                echo ("<h4>".$row["description"]."</h4></br>");
+                echo ("</div></div>");
+                $row = $obj->fetch();
+              }
+            ?>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other Events Modal -->
+    <div class="modal fade" id="otherEventsModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">Other Events</h4>
+          </div>
+          <div class="modal-body">
+            <?php
+              $row = $obj->get_all_other_events();
+              $row = $obj->fetch();
+              while($row){
+                echo ("<div class='row'><div class='col-md-6'>");
+                echo ("<h2>".$row["title"]."</h2>");
+                echo ("<img src='".$row["image_path"]."' width=300px height=300px>");
+                echo ("</div><div class='col-md-6>'");
+                echo ("<span class='text-right'><h3>");
+                echo ("</br></br><strong>Date: </strong>".$row["day"]."</br>");
+                echo ("<strong>Time: </strong>".$row["time"]."</br>");
+                echo ("<strong>Venue: </strong>".$row["venue"]."</br>");
+                echo ("</h3></span></br>");
+                echo ("<h4>".$row["description"]."</h4></br>");
+                echo ("</div></div>");
+                $row = $obj->fetch();
+              }
+            ?>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Add Modal -->
     <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
@@ -338,13 +446,14 @@
       </div>
     </div>
 
+    <!-- Owl Carousel settings and setting of category value for add form -->
     <script type="text/javascript">
       function addCategory(category){
+        // Sets the category of a post
         document.getElementById("addCategory").value = category;
       }
-
+      // Owl Carousel Settings
       $(document).ready(function() {
-       
         $("#owl-example").owlCarousel({
           slideSpeed : 300,
           paginationSpeed : 400,
@@ -352,12 +461,11 @@
           autoPlay:4000,
           navigation:true,
           stopOnHover:true
-
         });
-       
       });
     </script>
 
+    <!-- Handles image save to uploads folder and adding post to database -->
     <?php
       if(isset($_REQUEST["title"])){
         $title = $_REQUEST["title"];
