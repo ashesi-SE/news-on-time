@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <!-- <meta http-equiv="refresh" content="60"> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>News on time</title>
@@ -41,10 +42,8 @@
     <script src="owl/owl-carousel/owl.carousel.js"></script>
 
     <div class="container">
-      <div class="">
-        <div class="container">
-          <center><h1>News On Time</h1></center>
-        </div>
+      <div class="row">
+        <div class="pageTitle"><h1>News On Time</h1></div>
       </div>
 
       <!-- Carousel -->
@@ -287,7 +286,7 @@
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             <h4 class="modal-title">New post</h4>
           </div>
-          <form action="index.php" method="post" enctype="multipart/form-data">
+          <form action="index.php" method="post" enctype="multipart/form-data" onSubmit="setTimeout('location.reload(true)',500); return true;">
             <div class="modal-body">
               <div class="input-group">
                 <span class="input-group-addon">Title</span>
@@ -329,6 +328,7 @@
               <label for="file"><h4>Select a poster image for your post</h4></label>
               <input type="file" name="file" id="file"><br>
               <input type="hidden" id="addCategory" name="category" value="">
+              <input type="hidden" id="refresh" onClick="history.go(0)" value="Refresh">
             </div>
             <div class="modal-footer">
               <button type="submit" class="btn btn-primary">Add</button>
@@ -418,6 +418,9 @@
           echo "Error. Couldn't insert into database";
           exit();
         }
+        // echo ("<script type='text/javascript'>$(document).ready({('#refresh').click()});</script>");
+        // echo ("<script type='text/javascript'>location.reload(true);</script>");
+        
       }
     ?>
 

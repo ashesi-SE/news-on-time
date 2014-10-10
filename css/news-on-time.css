@@ -1,3 +1,6 @@
+body{
+	background-color: MintCream;
+}
 .category img{
 	width:252px;
 	height:189px;
@@ -5,4 +8,8 @@
 .carousel img{
 	width:700px;
 	height:400px;
+}
+.pageTitle{
+	text-align:center;
+
 }
