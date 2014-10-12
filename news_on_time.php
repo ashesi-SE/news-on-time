@@ -101,6 +101,10 @@
 			$query = "INSERT INTO posts SET title='$title', image_path='$image_path', venue='$venue', day='$day', time='$time', description='$description', category='$category', start_date='$start_date', end_date='$end_date'";
 			return $this->query($query);
 		}
+		function add_lost_and_found($image_path,$item,$description,$location,$tag,$contact_name,$contact_number,$contact_email){
+			$query = "INSERT INTO lost_and_found SET image_path='$image_path',item='$item',description='$description',location='$location',tag='$tag',contact_name='$contact_name',contact_number='$contact_number',contact_email='$contact_email';";
+			return $this->query($query);
+		}
         function user_Authentication($username,$password){
         	$query="SELECT IF((SELECT passwd FROM users WHERE username='$username')=MD5('$password'),true,false) AS 'results'";
         	if($this->query($query)){

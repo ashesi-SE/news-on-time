@@ -52,24 +52,24 @@
       <div class="title">News On Time</div>
 
       <!-- Carousel -->
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
           <div class="carouselContainer">
             <div id="owl-example" class="owl-carousel">
               <?php
-                $row = $obj->get_todays_events();
-                $row = $obj->fetch();
-                while($row){
-                  echo ("<div><img src='".$row["image_path"]."' alt='".$row["category"]."'></div>");
-                  $row = $obj->fetch();
-                }
+                // $row = $obj->get_todays_events();
+                // $row = $obj->fetch();
+                // while($row){
+                //   echo ("<div><img src='".$row["image_path"]."' alt='".$row["category"]."'></div>");
+                //   $row = $obj->fetch();
+                // }
               ?>
             </div>
           </div>
         </div>
         <div class="col-md-2"></div>
-      </div>
+      </div> -->
 
       <!-- Categories -->
       <div class="row">
@@ -633,23 +633,14 @@
             && in_array($extension, $allowedExts)
           )
         {
-          // echo "In parent if statement <br>";
           if ($_FILES["file"]["error"] > 0) {
-            // echo "In first child if statement <br>";
             echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
           }
           else {
-            // echo "In first child else statement <br>";
-            // echo "Upload: " . $_FILES["file"]["name"] . "<br>";
-            // echo "Type: " . $_FILES["file"]["type"] . "<br>";
-            // echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
-            // echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
             if (file_exists("upload/" . $_FILES["file"]["name"])) {
-              // echo "In second child if statement <br>";
               echo $_FILES["file"]["name"] . " already exists. ";
             }
             else {
-              // echo "In second child else statement <br>";
               move_uploaded_file($_FILES["file"]["tmp_name"],
               "upload/" . $_FILES["file"]["name"]);
               echo "Stored in: " . "upload/" . $_FILES["file"]["name"];
@@ -658,7 +649,6 @@
           }
         }
         else {
-          // echo "In parent else statement <br>";
           echo "Invalid file";
         }
 
@@ -667,7 +657,56 @@
           exit();
         }
       }
-    ?>
 
+      if(isset($_REQUEST["item"])){
+        $item = $_REQUEST["item"];
+        $location = $_REQUEST["location"];
+        $contact_name = $_REQUEST["contact_name"];
+        $contact_number = $_REQUEST["contact_number"];
+        $contact_email = $_REQUEST["contact_email"];
+        $description = $_REQUEST["description"];
+        $tag = $_REQUEST["tag"];
+
+        $allowedExts = array("gif", "jpeg", "jpg", "png");
+        $temp = explode(".", $_FILES["file"]["name"]);
+        $extension = end($temp);
+
+        if  (
+            (
+              ($_FILES["file"]["type"] == "image/gif")
+              || ($_FILES["file"]["type"] == "image/jpeg")
+              || ($_FILES["file"]["type"] == "image/jpg")
+              || ($_FILES["file"]["type"] == "image/pjpeg")
+              || ($_FILES["file"]["type"] == "image/x-png")
+              || ($_FILES["file"]["type"] == "image/png")
+            )
+            && in_array($extension, $allowedExts)
+          )
+        {
+          if ($_FILES["file"]["error"] > 0) {
+            echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
+          }
+          else {
+            if (file_exists("upload/lostAndFound/" . $_FILES["file"]["name"])) {
+              echo $_FILES["file"]["name"] . " already exists. ";
+            }
+            else {
+              move_uploaded_file($_FILES["file"]["tmp_name"],
+              "upload/lostAndFound/" . $_FILES["file"]["name"]);
+              echo "Stored in: " . "upload/lostAndFound/" . $_FILES["file"]["name"];
+              $image_path = "upload/lostAndFound/" . $_FILES["file"]["name"];
+            }
+          }
+        }
+        else {
+          echo "Invalid file";
+        }
+
+        if(!$obj->add_lost_and_found($image_path,$item,$description,$location,$tag,$contact_name,$contact_number,$contact_email)){
+          echo "Error. Couldn't insert into database";
+          exit();
+        }
+      }
+    ?>
   </body>
 </html>
