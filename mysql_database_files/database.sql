@@ -52,7 +52,14 @@ CREATE TABLE IF NOT EXISTS lost_and_found(
 	tag enum("lost","found"),
 	contact_name varchar(50),
 	contact_number varchar(15),
+	contact_email varchar(2500),
 	PRIMARY KEY(lfid)
 );
--- INSERT INTO lost_and_found(item,description,location,tag,contact_name,contact_number) VALUES
-
+INSERT INTO lost_and_found(item,description,location,tag,contact_name,contact_number,contact_email) VALUES
+("bag","blue gucci tote","under the stairs","lost","Ama","0000000000","someone@example.com"),
+("shoe","six inch blackk loubutins","the cave","found","Kofi","0000000000","someone@example.com"),
+("calculator","yellow TI","library","lost","Kwabena","0000000000","someone@example.com"),
+("pen","blue bic pen","LH216","found","Abena","0000000000","someone@example.com");
+-- select * from lost_and_found;
+-- select * from lost_and_found where tag="found";
+-- select count(*) from lost_and_found where tag="lost";

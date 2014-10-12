@@ -75,6 +75,20 @@
 			}
 			return $this->fetch();
 		}
+		function get_num_lost(){
+			$query="SELECT COUNT(*) FROM lost_and_found WHERE tag='lost';";
+			if(!$this->query($query)){
+				return false;
+			}
+			return $this->fetch()["COUNT(*)"];
+		}
+		function get_num_found(){
+			$query="SELECT COUNT(*) FROM lost_and_found WHERE tag='found';";
+			if(!$this->query($query)){
+				return false;
+			}
+			return $this->fetch()["COUNT(*)"];
+		}
 		function add_post($title,$image_path,$venue,$day,$time,$description,$category,$start_date,$end_date){
 			$query = "INSERT INTO posts SET title='$title', image_path='$image_path', venue='$venue', day='$day', time='$time', description='$description', category='$category', start_date='$start_date', end_date='$end_date'";
 			return $this->query($query);

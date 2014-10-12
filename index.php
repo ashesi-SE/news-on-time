@@ -42,6 +42,8 @@
       $numSports = $obj->get_num_sports();
       $numClubEvents = $obj->get_num_club_events();
       $numOtherEvents = $obj->get_num_other_events();
+      $numLost = $obj->get_num_lost();
+      $numFound = $obj->get_num_found();
     ?>
 
     
@@ -132,7 +134,7 @@
         <div class="col-md-3">
           <div class="category thumbnail">
             <div class="thumbnailHeader">Sports Events</div>
-            <img src="images/sports1.jpg" alt="Sports Events" data-toggle="modal" data-target="#sportsModal">
+            <img src="images/sports.jpg" alt="Sports Events" data-toggle="modal" data-target="#sportsModal">
             <div class="caption">
               <div class="row">
                 <div class="col-md-9">
@@ -171,7 +173,7 @@
         <div class="col-md-3">
           <div class="category thumbnail">
             <div class="thumbnailHeader">Other Events</div>
-            <img src="images/other_events.jpg" alt="Club events" data-toggle="modal" data-target="#otherEventsModal">
+            <img src="images/other_events.png" alt="Club events" data-toggle="modal" data-target="#otherEventsModal">
             <div class="caption">
               <div class="row">
                 <div class="col-md-9">
@@ -185,11 +187,41 @@
             </div>
           </div>
         </div>
-        <!-- Empty -->
+        <!-- Lost Category -->
         <div class="col-md-3">
+          <div class="category thumbnail">
+            <div class="thumbnailHeader">Lost</div>
+            <img src="images/lost.jpg" alt="Lost" data-toggle="modal" data-target="#lostModal">
+            <div class="caption">
+              <div class="row">
+                <div class="col-md-9">
+                  <span class="badge"><?php echo ($numLost) ?></span>
+                </div>
+                <div class="col-md-3">
+                  <button type="submit" class="btn btn-default btn-sm" onclick="addTag('lost')" data-toggle="modal" data-target="#addLostAndFoundModal">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- Empty -->
+        <!-- Found Category -->
         <div class="col-md-3">
+          <div class="category thumbnail">
+            <div class="thumbnailHeader">Found</div>
+            <img src="images/found.jpg" alt="Found" data-toggle="modal" data-target="#foundModal">
+            <div class="caption">
+              <div class="row">
+                <div class="col-md-9">
+                  <span class="badge"><?php echo ($numFound) ?></span>
+                </div>
+                <div class="col-md-3">
+                  <button type="submit" class="btn btn-default btn-sm" onclick="addTag('found')" data-toggle="modal" data-target="#addLostAndFoundModal">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

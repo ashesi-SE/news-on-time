@@ -15,14 +15,14 @@ body {
 }
 .title{
 	color: white;
-	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-family: "Chalkduster";
 	text-align:center;
 	font-size: 400%;
-	padding-bottom: 3%;
+	/*padding-bottom: 3%;*/
 }
 .thumbnailHeader{
 	text-align:center;
-	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-family: "Noteworthy";
 	font-style:bold;
 	font-size:200%;
 }
