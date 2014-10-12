@@ -33,47 +33,55 @@
 			$query = "SELECT * FROM posts WHERE category = 'other events' AND start_date <= CURRENT_DATE() AND end_date >= CURRENT_DATE()";
 			return $this->query($query);
 		}
+		function get_all_lost(){
+			$query = "SELECT * FROM lost_and_found WHERE tag='lost';";
+			return $this->query($query);
+		}
+		function get_all_found(){
+			$query = "SELECT * FROM lost_and_found WHERE tag='found';";
+			return $this->query($query);
+		}
 		function get_num_movies(){
 			$query = "SELECT COUNT(*) FROM posts WHERE category = 'movies' AND start_date <= CURRENT_DATE() AND end_date >= CURRENT_DATE();";
 			if(!$this->query($query)){
 				return false;
 			}
-			return $this->fetch();
+			return $this->fetch()["COUNT(*)"];
 		}
 		function get_num_parties(){
 			$query = "SELECT COUNT(*) FROM posts WHERE category = 'parties' AND start_date <= CURRENT_DATE() AND end_date >= CURRENT_DATE();";
 			if(!$this->query($query)){
 				return false;
 			}
-			return $this->fetch();
+			return $this->fetch()["COUNT(*)"];
 		}
 		function get_num_foodie(){
 			$query = "SELECT COUNT(*) FROM posts WHERE category = 'foodie' AND start_date <= CURRENT_DATE() AND end_date >= CURRENT_DATE();";
 			if(!$this->query($query)){
 				return false;
 			}
-			return $this->fetch();
+			return $this->fetch()["COUNT(*)"];
 		}
 		function get_num_sports(){
 			$query = "SELECT COUNT(*) FROM posts WHERE category = 'sports' AND start_date <= CURRENT_DATE() AND end_date >= CURRENT_DATE();";
 			if(!$this->query($query)){
 				return false;
 			}
-			return $this->fetch();
+			return $this->fetch()["COUNT(*)"];
 		}
 		function get_num_club_events(){
 			$query = "SELECT COUNT(*) FROM posts WHERE category = 'club events' AND start_date <= CURRENT_DATE() AND end_date >= CURRENT_DATE();";
 			if(!$this->query($query)){
 				return false;
 			}
-			return $this->fetch();
+			return $this->fetch()["COUNT(*)"];
 		}
 		function get_num_other_events(){
 			$query = "SELECT COUNT(*) FROM posts WHERE category = 'other events' AND start_date <= CURRENT_DATE() AND end_date >= CURRENT_DATE();";
 			if(!$this->query($query)){
 				return false;
 			}
-			return $this->fetch();
+			return $this->fetch()["COUNT(*)"];
 		}
 		function get_num_lost(){
 			$query="SELECT COUNT(*) FROM lost_and_found WHERE tag='lost';";

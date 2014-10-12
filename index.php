@@ -81,7 +81,7 @@
             <div class="caption">
               <div class="row">
                 <div class="col-md-9">
-                  <span class="badge"><?php echo ($numMovies["COUNT(*)"]) ?></span>
+                  <span class="badge"><?php echo ($numMovies) ?></span>
                 </div>
                 <div class="col-md-3">
                   <button type="submit" class="btn btn-default btn-sm" onclick="addCategory('movies')" data-toggle="modal" data-target="#addModal">
@@ -100,7 +100,7 @@
             <div class="caption">
               <div class="row">
                 <div class="col-md-9">
-                  <span class="badge"><?php echo ($numParties["COUNT(*)"]) ?></span>
+                  <span class="badge"><?php echo ($numParties) ?></span>
                 </div>
                 <div class="col-md-3">
                   <button type="submit" class="btn btn-default btn-sm" onclick="addCategory('parties')" data-toggle="modal" data-target="#addModal">
@@ -119,7 +119,7 @@
             <div class="caption">
               <div class="row">
                 <div class="col-md-9">
-                  <span class="badge"><?php echo ($numFoodie["COUNT(*)"]) ?></span>
+                  <span class="badge"><?php echo ($numFoodie) ?></span>
                 </div>
                 <div class="col-md-3">
                   <button type="submit" class="btn btn-default btn-sm" onclick="addCategory('foodie')" data-toggle="modal" data-target="#addModal">
@@ -138,7 +138,7 @@
             <div class="caption">
               <div class="row">
                 <div class="col-md-9">
-                  <span class="badge"><?php echo ($numSports["COUNT(*)"]) ?></span>
+                  <span class="badge"><?php echo ($numSports) ?></span>
                 </div>
                 <div class="col-md-3">
                   <button type="submit" class="btn btn-default btn-sm" onclick="addCategory('sports')" data-toggle="modal" data-target="#addModal">
@@ -159,7 +159,7 @@
             <div class="caption">
               <div class="row">
                 <div class="col-md-9">
-                  <span class="badge"><?php echo ($numClubEvents["COUNT(*)"]) ?></span>
+                  <span class="badge"><?php echo ($numClubEvents) ?></span>
                 </div>
                 <div class="col-md-3">
                   <button type="submit" class="btn btn-default btn-sm" onclick="addCategory('club events')" data-toggle="modal" data-target="#addModal">
@@ -177,7 +177,7 @@
             <div class="caption">
               <div class="row">
                 <div class="col-md-9">
-                  <span class="badge"><?php echo ($numOtherEvents["COUNT(*)"]) ?></span>
+                  <span class="badge"><?php echo ($numOtherEvents) ?></span>
                 </div>
                 <div class="col-md-3">
                   <button type="submit" class="btn btn-default btn-sm" onclick="addCategory('other events')" data-toggle="modal" data-target="#addModal">
@@ -410,6 +410,72 @@
                 echo ("<strong>Venue: </strong>".$row["venue"]."</br>");
                 echo ("</h3></span></br>");
                 echo ("<h4>".$row["description"]."</h4></br>");
+                echo ("</div></div>");
+                $row = $obj->fetch();
+              }
+            ?>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lost Modal -->
+    <div class="modal fade" id="lostModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">Lost Items</h4>
+          </div>
+          <div class="modal-body">
+            <?php
+              $row = $obj->get_all_lost();
+              $row = $obj->fetch();
+              while($row){
+                echo ("<div class='row'><div class='col-md-6'>");
+                echo ("<h2>".$row["item"]."</h2>");
+                echo ("<img src='".$row["image_path"]."' width=300px height=300px>");
+                echo ("</div><div class='col-md-6>'");
+                echo ("<span class='text-right'></br><h4>");
+                echo ("</br></br><strong>Where it got lost: </strong>".$row["location"]."</br>");
+                echo ("<strong>Person to contact: </strong>".$row["contact_name"]."</br>");
+                echo ("<strong>Contact number: </strong>".$row["contact_number"]."</br>");
+                echo ("<strong>Contact email: </strong>".$row["contact_email"]."</br></br>");
+                echo ("<strong>Details</strong></br>".$row["description"]."</br>");
+                echo ("</h4></span>");
+                echo ("</div></div>");
+                $row = $obj->fetch();
+              }
+            ?>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Found Modal -->
+    <div class="modal fade" id="foundModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">Found Items</h4>
+          </div>
+          <div class="modal-body">
+            <?php
+              $row = $obj->get_all_found();
+              $row = $obj->fetch();
+              while($row){
+                echo ("<div class='row'><div class='col-md-6'>");
+                echo ("<h2>".$row["item"]."</h2>");
+                echo ("<img src='".$row["image_path"]."' width=300px height=300px>");
+                echo ("</div><div class='col-md-6>'");
+                echo ("<span class='text-right'></br><h4>");
+                echo ("</br></br><strong>Where it got lost: </strong>".$row["location"]."</br>");
+                echo ("<strong>Person to contact: </strong>".$row["contact_name"]."</br>");
+                echo ("<strong>Contact number: </strong>".$row["contact_number"]."</br>");
+                echo ("<strong>Contact email: </strong>".$row["contact_email"]."</br></br>");
+                echo ("<strong>Details</strong></br>".$row["description"]."</br>");
+                echo ("</h4></span>");
                 echo ("</div></div>");
                 $row = $obj->fetch();
               }
