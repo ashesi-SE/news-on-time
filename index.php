@@ -516,14 +516,6 @@
                 <!-- <input type="text" name="description" class="form-control" placeholder="A short description"> -->
                 <textarea name="description" class="form-control" rows="2" placeholder="A short description"></textarea>
               </div></br>
-              <!-- <div class="input-group">
-                <span class="input-group-addon">Category</span>
-                <select name="category" class="form-control">
-                  <option>movies</option>
-                  <option>parties</option>
-                  <option>foodie</option>
-                </select>
-              </div></br> -->
               <div class="input-group">
                 <span class="input-group-addon">Start Run Date</span>
                 <input type="date" name="startDate" class="form-control">
@@ -544,11 +536,61 @@
       </div>
     </div>
 
+    <!-- Add Lost and Found Modal -->
+    <div class="modal fade" id="addLostAndFoundModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="lostAndFoundTitle"></h4>
+          </div>
+          <form action="index.php" method="post" enctype="multipart/form-data">
+            <div class="modal-body">
+              <div class="input-group">
+                <span class="input-group-addon">Item</span>
+                <input type="text" name="item" class="form-control" placeholder="What did you lose?">
+              </div></br>
+              <div class="input-group">
+                <span class="input-group-addon">Where did you lose it?</span>
+                <input type="text" name="location" class="form-control" placeholder="Where was the last time you saw it?">
+              </div></br>
+              <div class="input-group">
+                <span class="input-group-addon">Your name</span>
+                <input type="text" name="contact_name" class="form-control" placeholder="Enter your full name">
+              </div></br>
+              <div class="input-group">
+                <span class="input-group-addon">Your phone number</span>
+                <input type="text" name="contact_number" class="form-control" placeholder="Enter a number we can reach you on">
+              </div></br>
+              <div class="input-group">
+                <span class="input-group-addon">Your email address</span>
+                <input type="email" name="contact_email" class="form-control" placeholder="Enter an email address you check regularly">
+              </div></br>
+              <div class="input-group">
+                <span class="input-group-addon">Details</span>
+                <textarea name="description" class="form-control" rows="2" placeholder="A SHORT description of the item you lost"></textarea>
+              </div></br>
+              <label for="file"><h4>Select a poster image for your post</h4></label>
+              <input type="file" name="file" id="file"><br>
+              <input type="hidden" id="addTag" name="tag" value="">
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <!-- Owl Carousel settings and setting of category value for add form -->
     <script type="text/javascript">
       function addCategory(category){
         // Sets the category of a post
         document.getElementById("addCategory").value = category;
+      }
+      function addTag(tag){
+        document.getElementById("lostAndFoundTitle").innerHTML = ("Add "+tag+" item");
+        document.getElementById("addTag").value = tag;
       }
       // Owl Carousel Settings
       $(document).ready(function() {
