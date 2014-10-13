@@ -26,37 +26,37 @@ With the news on time app:
 
 Team Memmbers
 -------------
-| Name                                | Primary Role	            | Secondary Role(s)            |
+| Name                                | Primary Role	          | Secondary Role(s)            |
 | :---------------------------------- | :------------------------ | :--------------------------- |
-| **Carl Yao Agbenyega**              | Interaction design	      | Team Leader                  |
-| **Edem Anaglo**	                    | Project Management	      | Interaction Design/Architect |
-| **Gloria Boatemaa Karikari-Yeboah** | Architect	                | Software Design Engineer     |
-| **Alfred Kofi Gaglo**	              | Software Design Engineer	| Program Management           |
-| **Nanette Mawuena Taylor**	        | Team Leader	              | Interaction Design           |
+| **Carl Yao Agbenyega**              | Interaction design	  | Team Leader                  |
+| **Edem Anaglo**	              | Project Management	  | Interaction Design/Architect |
+| **Gloria Boatemaa Karikari-Yeboah** | Architect	          | Software Design Engineer     |
+| **Alfred Kofi Gaglo**	              | Software Design Engineer  | Program Management           |
+| **Nanette Mawuena Taylor**	      | Team Leader	          | Interaction Design           |
 
 Project Status
 --------------
-Curently, the project allows a typical user to view an HTML page which displays a number of image tiles containing  some random test news items and placeholders.
+Curently, the project allows a typical user to view a web page which displays a number of tiles representing the news categories. The user can also add posts to each category. The categories are:
+* Movie Night
+* Parties
+* Foodie Events
+* Sports Events
+* Club Events
+* Other Eevnts
+* Lost
+* Found
 
 Getting Started
 ---------------
 ### Dependencies
 * XAMPP Apache Web Server
+* MySql Server
 
 ### Setting Up
 1. Initialise git in the htdocs directory of XAMPP by typing `git init`
-2. Clone the project by typing `git clone https://github.com/ashesi-SE/news-on-time` in a git initialised directory/repository
-<<<<<<< HEAD
-<<<<<<< HEAD
-3. Type `git checkout -f second-iteration` to get what we have so far
+2. Clone the project by typing `git clone https://github.com/ashesi-SE/news-on-time` in the git initialised directory or repository
+3. Type `git checkout -f third-iteration` to get what we have so far
 4. Run the databse.sql file found in the mysql_database_files. Make sure you don't have a database called news_on_time otherwise it will be deleted.
-=======
-3. Type `git checkout -f first-iteration` to get what we have so far
->>>>>>> master
-=======
-3. Type `git checkout -f second-iteration` to get what we have so far
-4. Run the databse.sql file found in the mysql_database_files folder. Make sure you don't have a database called news_on_time otherwise it will be deleted.
->>>>>>> d6d9cd3f7ceecc678e926dba27913154a64b4307
 4. Navigate to http://localhost/news-on-time/
 
 
