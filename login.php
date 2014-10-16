@@ -30,8 +30,8 @@
 			session_start();
 				//initiate session for the current login
 			loadUserProfile($username);	//load user information into the session
-			header("location: create_account.php");	//redirect to home page
-			echo "<a href='create_account.php'>click here</a>";	//if redirect fails, provide a link
+			header("location: administration.php");	//redirect to home page
+			echo "<a href='administration.php'>click here</a>";	//if redirect fails, provide a link
 			exit();
 		}else{
 			//if login returns false, then something is worng
@@ -45,7 +45,10 @@
 <html>
 <head>
 	<title>Login</title>
-	 <link rel="stylesheet" type="text/css" href="index.css"> 
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/jasny-bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="css/news-on-time.css"> -->
 </head>
 <body>
 	<div id="container">

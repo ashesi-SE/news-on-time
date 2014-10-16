@@ -76,7 +76,7 @@
         <!-- Movies Category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <div class="thumbnailHeader">Movie Night</div>
+            <!-- <div class="thumbnailHeader">Movie Night</div> -->
             <img src="images/movies.jpg" alt="Movie Night" data-toggle="modal" data-target="#moviesModal">
             <div class="caption">
               <div class="row">
@@ -95,7 +95,7 @@
         <!-- Parties Category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <div class="thumbnailHeader">Parties</div>
+            <!-- <div class="thumbnailHeader">Parties</div> -->
             <img src="images/parties.jpg" alt="Parties" data-toggle="modal" data-target="#partiesModal">
             <div class="caption">
               <div class="row">
@@ -114,7 +114,7 @@
         <!-- Foodie Category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <div class="thumbnailHeader">Foodie Events</div>
+            <!-- <div class="thumbnailHeader">Foodie Events</div> -->
             <img src="images/foodie.jpg" alt="Foodie Events" data-toggle="modal" data-target="#foodieModal">
             <div class="caption">
               <div class="row">
@@ -133,7 +133,7 @@
         <!-- Sports category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <div class="thumbnailHeader">Sports Events</div>
+            <!-- <div class="thumbnailHeader">Sports Events</div> -->
             <img src="images/sports.jpg" alt="Sports Events" data-toggle="modal" data-target="#sportsModal">
             <div class="caption">
               <div class="row">
@@ -154,7 +154,7 @@
         <!-- Club events category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <div class="thumbnailHeader">Club Events</div>
+            <!-- <div class="thumbnailHeader">Club Events</div> -->
             <img src="images/club_events.jpg" alt="Club events" data-toggle="modal" data-target="#clubEventsModal">
             <div class="caption">
               <div class="row">
@@ -172,7 +172,7 @@
         <!-- Other Events -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <div class="thumbnailHeader">Other Events</div>
+            <!-- <div class="thumbnailHeader">Other Events</div> -->
             <img src="images/other_events.png" alt="Club events" data-toggle="modal" data-target="#otherEventsModal">
             <div class="caption">
               <div class="row">
@@ -190,7 +190,7 @@
         <!-- Lost Category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <div class="thumbnailHeader">Lost</div>
+            <!-- <div class="thumbnailHeader">Lost</div> -->
             <img src="images/lost.jpg" alt="Lost" data-toggle="modal" data-target="#lostModal">
             <div class="caption">
               <div class="row">
@@ -208,7 +208,7 @@
         <!-- Found Category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <div class="thumbnailHeader">Found</div>
+            <!-- <div class="thumbnailHeader">Found</div> -->
             <img src="images/found.jpg" alt="Found" data-toggle="modal" data-target="#foundModal">
             <div class="caption">
               <div class="row">

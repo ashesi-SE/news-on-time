@@ -27,6 +27,10 @@
 			return $this->query($query);
 		}
 
+		function edit_post(){
+			$quesry - "";
+		}
+
 		function get_num_category_posts($category){
 			$query = "SELECT count(*) FROM posts WHERE category = '$category'";
 			return $this->query($query);

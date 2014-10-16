@@ -26,3 +26,13 @@ body {
 	font-style:bold;
 	font-size:200%;
 }
+
+.sidebar{
+	width: 300px;
+	margin-left: auto;
+}
+
+.main-body{
+	width: auto;
+	margin-left: auto;
+}
