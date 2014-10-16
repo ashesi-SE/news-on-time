@@ -1,5 +1,5 @@
 body {
-	/*background-color: MintCream;*/
+	background-color: black;
 	background-image: url('../images/background.jpg');
 }
 .category img{
@@ -35,4 +35,7 @@ body {
 .main-body{
 	width: auto;
 	margin-left: auto;
+}
+.tableArea{
+	background-color: white;
 }

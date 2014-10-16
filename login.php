@@ -60,13 +60,13 @@
 		<div class="col-md-4">
 			<div class="title">Login</div>
 			<form action="login.php" method="POST">
-				<div class="input-group">
+				<div class="input-group input-group-lg">
 					<span class="input-group-addon">Username</span>
-		            <input type="text" name="username" class="form-control input-lg" placeholder="Enter your username">
+		            <input type="text" name="username" class="form-control" placeholder="Enter your username">
 		        </div></br>
-		        <div class="input-group">
+		        <div class="input-group input-group-lg">
 	            	<span class="input-group-addon">Password</span>
-		            <input type="password" name="password" class="form-control input-lg" placeholder="">
+		            <input type="password" name="password" class="form-control" placeholder="">
 		        </div></br>
 		        <button type="submit" class="btn btn-primary btn-lg btn-block" name="submit" value="login">Login</button>
 			</form>

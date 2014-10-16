@@ -22,13 +22,13 @@
 			return $this->query($query);
 		}
 
-		function list_all_posts(){
+		function get_all_posts(){
 			$query = "SELECT * FROM posts";
 			return $this->query($query);
 		}
 
 		function edit_post(){
-			$quesry - "";
+			$query - "";
 		}
 
 		function get_num_category_posts($category){

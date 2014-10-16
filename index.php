@@ -18,7 +18,7 @@
     <![endif]-->
     <!-- Important Owl stylesheet -->
     <link rel="stylesheet" href="owl/owl-carousel/owl.carousel.css">
-    <!-- Default Theme -->
+    <!-- Default Owl Theme -->
     <link rel="stylesheet" href="owl/owl-carousel/owl.theme.css">
     <link rel="stylesheet" type="text/css" href="css/news-on-time.css">
   </head>
