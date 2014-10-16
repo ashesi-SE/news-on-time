@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>News on time</title>
+    <!-- Favicon -->
     <link rel="icon" type="image/jpg" href="favicon.png">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -52,24 +53,24 @@
       <div class="title">News On Time</div>
 
       <!-- Carousel -->
-      <!-- <div class="row">
+      <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
           <div class="carouselContainer">
             <div id="owl-example" class="owl-carousel">
               <?php
-                // $row = $obj->get_todays_events();
-                // $row = $obj->fetch();
-                // while($row){
-                //   echo ("<div><img src='".$row["image_path"]."' alt='".$row["category"]."'></div>");
-                //   $row = $obj->fetch();
-                // }
+                $row = $obj->get_todays_events();
+                $row = $obj->fetch();
+                while($row){
+                  echo ("<div><img src='".$row["image_path"]."' alt='".$row["category"]."'></div>");
+                  $row = $obj->fetch();
+                }
               ?>
             </div>
           </div>
         </div>
         <div class="col-md-2"></div>
-      </div> -->
+      </div>
 
       <!-- Categories -->
       <div class="row">

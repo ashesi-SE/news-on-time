@@ -7,6 +7,8 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/jasny-bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/news-on-time.css">
+        <!-- Favicon -->
+        <link rel="icon" type="image/jpg" href="favicon.png">
     </head>
 	<body>
 
