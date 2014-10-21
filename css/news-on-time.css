@@ -13,29 +13,28 @@ body {
 	width:700px;
 	height:400px;
 }
+.main-body{
+	width: auto;
+	margin-left: auto;
+}
+.sidebar{
+	width: 300px;
+	margin-left: auto;
+}
+.tableArea{
+	background-color: white;
+	border-radius: 25px;	
+}
 .title{
 	color: white;
 	font-family: "Chalkduster";
 	text-align:center;
 	font-size: 400%;
-	padding-bottom: 3%;
+	/*padding-bottom: 3%;*/
 }
 .thumbnailHeader{
 	text-align:center;
 	font-family: "Noteworthy";
 	font-style:bold;
 	font-size:200%;
-}
-
-.sidebar{
-	width: 300px;
-	margin-left: auto;
-}
-
-.main-body{
-	width: auto;
-	margin-left: auto;
-}
-.tableArea{
-	background-color: white;
 }

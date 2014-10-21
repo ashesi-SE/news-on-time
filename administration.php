@@ -5,17 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Administration</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/jasny-bootstrap.min.css" rel="stylesheet">
+        <!-- <link href="css/jasny-bootstrap.min.css" rel="stylesheet" media="screen"> -->
         <link rel="stylesheet" type="text/css" href="css/news-on-time.css">
         <!-- Favicon -->
         <link rel="icon" type="image/jpg" href="favicon.png">
     </head>
     <body>
-
-
     <script src="js/jquery-1.11.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jasny-bootstrap.min.js"></script> 
+    <!-- <script src="js/jasny-bootstrap.min.js"></script> -->
+
     <div class="container">
         <!-- Title -->
         <div class="row">
@@ -23,15 +22,15 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <a href="/news-on-time/index.php"><button class="btn btn-lg btn-block">Notice Board</button></a>
+                <a href="/news-on-time/index.php"><button class="btn btn-lg btn-block btn-primary">Notice Board</button></a>
             </div>
             <div class="col-md-6">
-                <button class="btn btn-lg btn-block" data-toggle="modal" data-target="#createAccountModal">Create User</button>
+                <button class="btn btn-lg btn-block btn-primary" data-toggle="modal" data-target="#createAccountModal">Create User</button>
             </div>
         </div></br>
         <div class="row">
             <div class="tableArea table-responsive">
-                <table class="table table-condensed table-hover table-bordered">
+                <table class="table table-condensed table-hover">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -104,68 +103,27 @@
             </div>
         </div>
     </div>
-<?php
-    $firstname = "";
-    $lastname = "";
-    $password = "";
-    $gender = "";
-    $username = "";
+    <?php
+        $firstname = "";
+        $lastname = "";
+        $password = "";
+        $gender = "";
+        $username = "";
 
-    if(isset($_REQUEST["firstname"]) && isset($_REQUEST["password"])){
+        if(isset($_REQUEST["firstname"]) && isset($_REQUEST["password"])){
 
-        echo "variables are set";
+            echo "variables are set";
 
-        $firstname = $_REQUEST["firstname"];
-        $lastname = $_REQUEST["lastname"];
-        $password = $_REQUEST["password"];
-        $gender = $_REQUEST["gender"];
-        $username = $_REQUEST["username"];
+            $firstname = $_REQUEST["firstname"];
+            $lastname = $_REQUEST["lastname"];
+            $password = $_REQUEST["password"];
+            $gender = $_REQUEST["gender"];
+            $username = $_REQUEST["username"];
 
-        if(!$obj->insert_account($firstname, $lastname, $gender, $username, $password)){
-            echo "didn't insert into database";
+            if(!$obj->insert_account($firstname, $lastname, $gender, $username, $password)){
+                echo "didn't insert into database";
+            }
         }
-    }
-
-?>
-
-
-
-
-            <!-- adds a new account to the database -->
-            <!-- <div class="add-account-form"> 
-                <img align="center" src="Ashesi_Logo_Black.png" width="90" height="90"></img
-                <img alt="Admin" img align="center" height="95" id="ashesilogo" src="Ashesi_Logo_Black.png" width="90" title="CreateAccount" style="padding-top: 112px; text-align: center">
-                <h2><text align="center"> Create User Account</text></h2>
-
-                <form action="create_account.php" method="post" class="form-horizontal tpad" role="form">
-                    <div class="form-group">
-                        First Name
-                        <input type="text" name="firstname"><br>
-                        
-                        Last Name
-                        <input type="text" name="lastname"><br>
-
-                        Gender
-                        <input type ="text" name="gender"><br>
-                        
-                        User Name
-                        <input type="text" name="username"><br>
-
-                        Password
-                        <input type="password" name="password"><br>
-                        
-                        <input type="submit" name="submit" value="Submit">
-                    </div>
-                </form>
-            </div> -->
-
-            <!-- Add New Account Modal -->
-            
-        <!-- <script>
-        //     function popup(){
-        //         alert("Congratulations!You've successfully created an account");
-        //     }
-        </script> -->
-
+    ?>
     </body>
 </html>
