@@ -28,7 +28,7 @@
 		}
 
 		function edit_post(){
-			$quesry - "";
+			$query - "";
 		}
 
 		function get_num_category_posts($category){

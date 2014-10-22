@@ -18,14 +18,17 @@
     <![endif]-->
     <!-- Important Owl stylesheet -->
     <link rel="stylesheet" href="owl/owl-carousel/owl.carousel.css">
-    <!-- Default Theme -->
+    <!-- Default Owl Theme -->
     <link rel="stylesheet" href="owl/owl-carousel/owl.theme.css">
     <link rel="stylesheet" type="text/css" href="css/news-on-time.css">
+    <link rel="stylesheet" type="text/css" href="./jqueryCalendar/jqueryCalendar.css">
   </head>
   <body>
 
     <script src="js/jquery-1.11.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src-"jqueryCalendar/jquery-ui-1.8.15.custom.min.js"></script>
     <script src="owl/owl-carousel/owl.carousel.js"></script>
 
     <!-- Get the number of posts in each category -->
@@ -54,22 +57,24 @@
 
       <!-- Carousel -->
       <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
+        <!-- <div class="col-md-2"></div> -->
+        <!-- <div class="col-md-8"> -->
           <div class="carouselContainer">
-            <div id="owl-example" class="owl-carousel">
-              <?php
-                $row = $obj->get_todays_events();
-                $row = $obj->fetch();
-                while($row){
-                  echo ("<div><img src='".$row["image_path"]."' alt='".$row["category"]."'></div>");
+            <center>
+              <div id="owl-example" class="owl-carousel">
+                <?php
+                  $row = $obj->get_todays_events();
                   $row = $obj->fetch();
-                }
-              ?>
-            </div>
+                  while($row){
+                    echo ("<div><img src='".$row["image_path"]."' alt='".$row["category"]."'></div>");
+                    $row = $obj->fetch();
+                  }
+                ?>
+              </div>
+            </center>
           </div>
-        </div>
-        <div class="col-md-2"></div>
+        <!-- </div> -->
+        <!-- <div class="col-md-2"></div> -->
       </div>
 
       <!-- Categories -->
@@ -502,7 +507,7 @@
               </div></br>
               <div class="input-group">
                 <span class="input-group-addon">Date</span>
-                <input type="date" name="day" class="form-control" placeholder="What time is it happening?">
+                <input type="text" name="day" class="dateInput"> <!-- name="day" class="form-control"> -->
               </div></br>
               <div class="input-group">
                 <span class="input-group-addon">Time</span>
@@ -514,23 +519,22 @@
               </div></br>
               <div class="input-group">
                 <span class="input-group-addon">Description</span>
-                <!-- <input type="text" name="description" class="form-control" placeholder="A short description"> -->
                 <textarea name="description" class="form-control" rows="2" placeholder="A short description"></textarea>
               </div></br>
               <div class="input-group">
-                <span class="input-group-addon">Start Run Date</span>
-                <input type="date" name="startDate" class="form-control">
+                <span class="input-group-addon">When should this post START running?</span>
+                <input type="text" name="startDate" class="dateInput">
               </div></br>
               <div class="input-group">
-                <span class="input-group-addon">End Run Date</span>
-                <input type="date" name="endDate" class="form-control">
+                <span class="input-group-addon">When should this post STOP running?</span>
+                <input type="text" name="endDate" class="dateInput">
               </div></br>
               <label for="file"><h4>Select a poster image for your post</h4></label>
               <input type="file" name="file" id="file"><br>
               <input type="hidden" id="addCategory" name="category" value="">
             </div>
             <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">Add</button>
+              <button type="submit" class="btn btn-primary" onclick="setDate()">Add</button>
             </div>
           </form>
         </div>
@@ -585,6 +589,9 @@
 
     <!-- Owl Carousel settings and setting of category value for add form -->
     <script type="text/javascript">
+      function setDate(){
+
+      }
       function addCategory(category){
         // Sets the category of a post
         document.getElementById("addCategory").value = category;
@@ -594,16 +601,29 @@
         document.getElementById("addTag").value = tag;
       }
       // Owl Carousel Settings
-      $(document).ready(function() {
-        $("#owl-example").owlCarousel({
-          slideSpeed : 300,
-          paginationSpeed : 400,
-          singleItem:true,
-          autoPlay:4000,
-          navigation:true,
-          stopOnHover:true
-        });
-      });
+      $(document).ready(
+        function() {
+          $(".dateInput").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: "yy-mm-dd",
+            showAnim: "slide"
+          });
+          $(function(){
+            $("#owl-example").owlCarousel(
+              {
+                slideSpeed : 300,
+                paginationSpeed : 400,
+                singleItem:true,
+                autoPlay:4000,
+                navigation:true,
+                // stopOnHover:true
+              }
+            );
+          })
+        }
+      );
+
     </script>
 
     <!-- Handles image save to uploads folder and adding post to database -->
