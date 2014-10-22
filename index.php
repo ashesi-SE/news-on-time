@@ -53,7 +53,18 @@
     
     <div class="container">
       <!-- Title -->
-      <div class="title">News On Time</div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div class="title">News On Time </div>
+        </div>
+        <div class="col-md-2">
+          <div class="container feedbackButton">
+            <button class="btn btn-lg btn-info" data-toggle="modal" data-target="#feedback">Give us feedback!</button>
+          </div>
+        </div>
+      </div>
+      
 
       <!-- Carousel -->
       <div class="row">
@@ -231,8 +242,6 @@
         </div>
       </div>
     </div>
-
-    <button class="btn btn-lg btn-block btn-info" data-toggle="modal" data-target="#feedback">Give us feedback</button>
 
     <!-- Modals -->
     <!-- Movies Modal -->
