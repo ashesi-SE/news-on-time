@@ -9,15 +9,16 @@ CREATE TABLE IF NOT EXISTS users(
 	gender enum("f", "m"),
 	username varchar(50),
 	passwd varchar(50),
+	user_type enum("admin","movies","sports"),
 	PRIMARY KEY(pid)
 );
-INSERT INTO users(firstname,lastname,gender,username,passwd) VALUES
+INSERT INTO users(firstname,lastname,gender,username,passwd,user_type) VALUES
 ("nanette","taylor","f","nanette.taylor",MD5("password")),
 ("carl","agbenyega","m","carl.agbenyega",MD5("password")),
 ("alfred","gaglo","m","alfred.gaglo",MD5("password")),
 ("edem","anaglo","m","edem.anaglo",MD5("password")),
 ("gloria","yeboah","f","gloria.yeboah",MD5("password"));
--- select * from users;
+select * from users;
 
 CREATE TABLE IF NOT EXISTS posts(
 	pstid int not null auto_increment,

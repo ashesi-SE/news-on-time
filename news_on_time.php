@@ -5,6 +5,9 @@
 		function news(){
 			adb::adb();
 		}
+		function get_all_posts(){
+			$query = "SELECT * FROM posts;";
+		}
 		function get_todays_events(){
 			$query = "SELECT * FROM posts WHERE day = CURRENT_DATE()";
 			return $this->query($query);
