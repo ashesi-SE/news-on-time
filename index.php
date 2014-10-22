@@ -232,6 +232,8 @@
       </div>
     </div>
 
+    <button class="btn btn-lg btn-block btn-info" data-toggle="modal" data-target="#feedback">Give us feedback</button>
+
     <!-- Modals -->
     <!-- Movies Modal -->
     <div class="modal fade" id="moviesModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -585,6 +587,18 @@
           </form>
         </div>
       </div>
+    </div>
+
+    <div class="modal fade" id="feedback" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="createAccount">We would love to know what you think</h4>
+                </div>
+                <iframe src="https://docs.google.com/forms/d/1KFhd_nmsoVHmi9TXdxr50EhVuyka6zb5sDMW6bJjnCE/viewform?embedded=true" width="900" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+            </div>
+        </div>
     </div>
 
     <!-- Owl Carousel settings and setting of category value for add form -->
