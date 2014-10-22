@@ -33,6 +33,7 @@
                       <!-- <button type="submit" > -->
                         <span class="btn btn-primary" onclick="addTag('found')" data-toggle="modal" data-target="#createAccountModal">Create New User</span>
                     </div>
+                </div>
                 <div class="main-body">
                   <!--Body content-->
 
@@ -78,7 +79,6 @@
                   </table>
 
                 </div>
-              </div>
         </div>
 
             <!-- adds a new account to the database -->
