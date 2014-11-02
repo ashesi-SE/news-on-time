@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>News on time</title>
+    <!-- Favicon -->
     <link rel="icon" type="image/jpg" href="favicon.png">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,14 +18,17 @@
     <![endif]-->
     <!-- Important Owl stylesheet -->
     <link rel="stylesheet" href="owl/owl-carousel/owl.carousel.css">
-    <!-- Default Theme -->
+    <!-- Default Owl Theme -->
     <link rel="stylesheet" href="owl/owl-carousel/owl.theme.css">
     <link rel="stylesheet" type="text/css" href="css/news-on-time.css">
+    <link rel="stylesheet" type="text/css" href="./jqueryCalendar/jqueryCalendar.css">
   </head>
   <body>
 
     <script src="js/jquery-1.11.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src-"jqueryCalendar/jquery-ui-1.8.15.custom.min.js"></script>
     <script src="owl/owl-carousel/owl.carousel.js"></script>
 
     <!-- Get the number of posts in each category -->
@@ -49,34 +53,47 @@
     
     <div class="container">
       <!-- Title -->
-      <div class="title">News On Time</div>
-
-      <!-- Carousel -->
-      <!-- <div class="row">
+      <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-          <div class="carouselContainer">
-            <div id="owl-example" class="owl-carousel">
-              <?php
-                // $row = $obj->get_todays_events();
-                // $row = $obj->fetch();
-                // while($row){
-                //   echo ("<div><img src='".$row["image_path"]."' alt='".$row["category"]."'></div>");
-                //   $row = $obj->fetch();
-                // }
-              ?>
-            </div>
+          <div class="title">News On Time </div>
+        </div>
+        <div class="col-md-2">
+          <div class="container feedbackButton">
+            <button class="btn btn-lg btn-info" data-toggle="modal" data-target="#feedback">Give us feedback!</button>
           </div>
         </div>
-        <div class="col-md-2"></div>
-      </div> -->
+      </div>
+      
+
+      <!-- Carousel -->
+      <div class="row">
+        <!-- <div class="col-md-2"></div> -->
+        <!-- <div class="col-md-8"> -->
+          <div class="carouselContainer">
+            <center>
+              <div id="owl-example" class="owl-carousel">
+                <?php
+                  $row = $obj->get_todays_events();
+                  $row = $obj->fetch();
+                  while($row){
+                    echo ("<div><img src='".$row["image_path"]."' alt='".$row["category"]."'></div>");
+                    $row = $obj->fetch();
+                  }
+                ?>
+              </div>
+            </center>
+          </div>
+        <!-- </div> -->
+        <!-- <div class="col-md-2"></div> -->
+      </div>
 
       <!-- Categories -->
       <div class="row">
         <!-- Movies Category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <div class="thumbnailHeader">Movie Night</div>
+            <!-- <div class="thumbnailHeader">Movie Night</div> -->
             <img src="images/movies.jpg" alt="Movie Night" data-toggle="modal" data-target="#moviesModal">
             <div class="caption">
               <div class="row">
@@ -95,7 +112,7 @@
         <!-- Parties Category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <div class="thumbnailHeader">Parties</div>
+            <!-- <div class="thumbnailHeader">Parties</div> -->
             <img src="images/parties.jpg" alt="Parties" data-toggle="modal" data-target="#partiesModal">
             <div class="caption">
               <div class="row">
@@ -114,7 +131,7 @@
         <!-- Foodie Category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <div class="thumbnailHeader">Foodie Events</div>
+            <!-- <div class="thumbnailHeader">Foodie Events</div> -->
             <img src="images/foodie.jpg" alt="Foodie Events" data-toggle="modal" data-target="#foodieModal">
             <div class="caption">
               <div class="row">
@@ -133,7 +150,7 @@
         <!-- Sports category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <div class="thumbnailHeader">Sports Events</div>
+            <!-- <div class="thumbnailHeader">Sports Events</div> -->
             <img src="images/sports.jpg" alt="Sports Events" data-toggle="modal" data-target="#sportsModal">
             <div class="caption">
               <div class="row">
@@ -154,7 +171,7 @@
         <!-- Club events category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <div class="thumbnailHeader">Club Events</div>
+            <!-- <div class="thumbnailHeader">Club Events</div> -->
             <img src="images/club_events.jpg" alt="Club events" data-toggle="modal" data-target="#clubEventsModal">
             <div class="caption">
               <div class="row">
@@ -172,7 +189,7 @@
         <!-- Other Events -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <div class="thumbnailHeader">Other Events</div>
+            <!-- <div class="thumbnailHeader">Other Events</div> -->
             <img src="images/other_events.png" alt="Club events" data-toggle="modal" data-target="#otherEventsModal">
             <div class="caption">
               <div class="row">
@@ -190,7 +207,7 @@
         <!-- Lost Category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <div class="thumbnailHeader">Lost</div>
+            <!-- <div class="thumbnailHeader">Lost</div> -->
             <img src="images/lost.jpg" alt="Lost" data-toggle="modal" data-target="#lostModal">
             <div class="caption">
               <div class="row">
@@ -208,7 +225,7 @@
         <!-- Found Category -->
         <div class="col-md-3">
           <div class="category thumbnail">
-            <div class="thumbnailHeader">Found</div>
+            <!-- <div class="thumbnailHeader">Found</div> -->
             <img src="images/found.jpg" alt="Found" data-toggle="modal" data-target="#foundModal">
             <div class="caption">
               <div class="row">
@@ -501,7 +518,7 @@
               </div></br>
               <div class="input-group">
                 <span class="input-group-addon">Date</span>
-                <input type="date" name="day" class="form-control" placeholder="What time is it happening?">
+                <input type="text" name="day" class="dateInput"> <!-- name="day" class="form-control"> -->
               </div></br>
               <div class="input-group">
                 <span class="input-group-addon">Time</span>
@@ -513,23 +530,22 @@
               </div></br>
               <div class="input-group">
                 <span class="input-group-addon">Description</span>
-                <!-- <input type="text" name="description" class="form-control" placeholder="A short description"> -->
                 <textarea name="description" class="form-control" rows="2" placeholder="A short description"></textarea>
               </div></br>
               <div class="input-group">
-                <span class="input-group-addon">Start Run Date</span>
-                <input type="date" name="startDate" class="form-control">
+                <span class="input-group-addon">When should this post START running?</span>
+                <input type="text" name="startDate" class="dateInput">
               </div></br>
               <div class="input-group">
-                <span class="input-group-addon">End Run Date</span>
-                <input type="date" name="endDate" class="form-control">
+                <span class="input-group-addon">When should this post STOP running?</span>
+                <input type="text" name="endDate" class="dateInput">
               </div></br>
               <label for="file"><h4>Select a poster image for your post</h4></label>
               <input type="file" name="file" id="file"><br>
               <input type="hidden" id="addCategory" name="category" value="">
             </div>
             <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">Add</button>
+              <button type="submit" class="btn btn-primary" onclick="setDate()">Add</button>
             </div>
           </form>
         </div>
@@ -582,8 +598,23 @@
       </div>
     </div>
 
+    <div class="modal fade" id="feedback" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="createAccount">We would love to know what you think</h4>
+                </div>
+                <iframe src="https://docs.google.com/forms/d/1KFhd_nmsoVHmi9TXdxr50EhVuyka6zb5sDMW6bJjnCE/viewform?embedded=true" width="900" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+            </div>
+        </div>
+    </div>
+
     <!-- Owl Carousel settings and setting of category value for add form -->
     <script type="text/javascript">
+      function setDate(){
+
+      }
       function addCategory(category){
         // Sets the category of a post
         document.getElementById("addCategory").value = category;
@@ -593,16 +624,29 @@
         document.getElementById("addTag").value = tag;
       }
       // Owl Carousel Settings
-      $(document).ready(function() {
-        $("#owl-example").owlCarousel({
-          slideSpeed : 300,
-          paginationSpeed : 400,
-          singleItem:true,
-          autoPlay:4000,
-          navigation:true,
-          stopOnHover:true
-        });
-      });
+      $(document).ready(
+        function() {
+          $(".dateInput").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: "yy-mm-dd",
+            showAnim: "slide"
+          });
+          $(function(){
+            $("#owl-example").owlCarousel(
+              {
+                slideSpeed : 300,
+                paginationSpeed : 400,
+                singleItem:true,
+                autoPlay:4000,
+                navigation:true,
+                // stopOnHover:true
+              }
+            );
+          })
+        }
+      );
+
     </script>
 
     <!-- Handles image save to uploads folder and adding post to database -->

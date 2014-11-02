@@ -30,8 +30,8 @@
 			session_start();
 				//initiate session for the current login
 			loadUserProfile($username);	//load user information into the session
-			header("location: create_account.php");	//redirect to home page
-			echo "<a href='create_account.php'>click here</a>";	//if redirect fails, provide a link
+			header("location: administration.php");	//redirect to home page
+			echo "<a href='administration.php'>click here</a>";	//if redirect fails, provide a link
 			exit();
 		}else{
 			//if login returns false, then something is worng
@@ -45,38 +45,36 @@
 <html>
 <head>
 	<title>Login</title>
-	 <link rel="stylesheet" type="text/css" href="index.css"> 
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/jasny-bootstrap.min.css" rel="stylesheet">
+    <!-- News on time style sheet -->
+    <link rel="stylesheet" type="text/css" href="css/news-on-time.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpg" href="favicon.png">
 </head>
 <body>
-	<div id="container">
-		<form action="login.php" method="POST">
-		<table align="center" width="80%">
-			<tr>
-				<td width="30%"></td>
-				<td colspan="2" align="center"><span><?php echo $msg ?></span></td>
-				<td width="30%"></td>
-			</tr>
-			<tr>
-				<td width="30%"></td>
-				<td>username</td>
-				<td><input type="text" name="username"></td>
-				<td width="30%"></td>
-			</tr>
-			<tr>
-				<td width="30%"></td>
-				<td>password</td>
-				<td><input type="password" name="password"></td>
-				<td  width="30%"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td><input type="submit" name="submit" value="login"></td>
-				<td></td>
-			</tr>
-		<table>
-	</form>
-</div>
+	<div class="container">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+			<div class="title">Login</div>
+			<form action="login.php" method="POST">
+				<div class="input-group input-group-lg">
+					<span class="input-group-addon">Username</span>
+		            <input type="text" name="username" class="form-control" placeholder="Enter your username">
+		        </div></br>
+		        <div class="input-group input-group-lg">
+	            	<span class="input-group-addon">Password</span>
+		            <input type="password" name="password" class="form-control" placeholder="">
+		        </div></br>
+		        <button type="submit" class="btn btn-primary btn-lg btn-block" name="submit" value="login">Login</button>
+			</form>
+			<div><span><?php echo $msg ?></span></div>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
 </body>
 </html>
 
