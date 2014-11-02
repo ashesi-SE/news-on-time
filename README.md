@@ -62,7 +62,7 @@ Getting Started
 You can find our **architecture worksheet** [here](https://github.com/ashesi-SE/news-on-time/wiki/Architecture)
 
 ### Deployment
-This application can be access on the local network of Ashesi Univeristy College using the following Beta Release URL: [http://50.63.128.135/~csashesi/class2015/edem-anaglo/news/](http://50.63.128.135/~csashesi/class2015/edem-anaglo/news/)
+For using the application in Deployment, check out [`this wiki page`](https://github.com/ashesi-SE/news-on-time/wiki/Deployment-Architecture)
 
 ### Wiki
 Check out our [wiki](https://github.com/ashesi-SE/news-on-time/wiki) to find out more about our project
