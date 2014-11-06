@@ -52,16 +52,17 @@ Getting Started
 * XAMPP Apache Web Server
 * MySql Server
 
-### Setting Up
-1. Initialise git in the htdocs directory of XAMPP by typing `git init`
+### Setting Up (on git shell)
+1. Create a new directory (eg. news-on-time) in your C:/XAMPP/htdocs directory and initialise git in this new directory you created by typing `git init`
 2. Clone the project by typing `git clone https://github.com/ashesi-SE/news-on-time` in the git initialised directory or repository
-3. Type `git checkout -f third-iteration` to get what we have so far
-4. Run the databse.sql file found in the mysql_database_files. Make sure you don't have a database called news_on_time otherwise it will be deleted.
-4. Navigate to http://localhost/news-on-time/
+3. Type `git checkout -f fifth-iteration` to get what we have so far
+4. Run the `databse.sql` file found in the `mysql_database_files` folder. Make sure you don't have a database called `news_on_time` otherwise it will be deleted.
+5. Navigate to `http://localhost/news-on-time/` in your browser
 
+You can find our **architecture worksheet** [here](https://github.com/ashesi-SE/news-on-time/wiki/Architecture)
 
-You can find our architecture worksheet [here](https://github.com/ashesi-SE/news-on-time/wiki/Architecture)
-
+### Deployment
+For using the application in Deployment, check out [`this wiki page`](https://github.com/ashesi-SE/news-on-time/wiki/Deployment-Architecture)
 
 ### Wiki
 Check out our [wiki](https://github.com/ashesi-SE/news-on-time/wiki) to find out more about our project
